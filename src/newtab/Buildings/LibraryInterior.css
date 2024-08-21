@@ -1,0 +1,71 @@
+/* LibraryInterior.css */
+.library-interior {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookshelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 50%;
+  justify-content: center;
+  background: linear-gradient(to bottom, #8b4513, #a0522d); /* Wooden shelf background */
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow:
+    inset 0px 5px 10px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 10px rgba(0, 0, 0, 0.3); /* Interior bevel/shadow */
+}
+
+.book-row {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  position: relative;
+  padding-bottom: 8px; /* Space for the border */
+  z-index: 10000;
+}
+
+.book-row::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* Thickness of the shelf */
+  background-color: #654321; /* Darker wood color for the shelf */
+  border-radius: 0 0 4px 4px; /* Slight rounding for realism */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); /* Shelf shadow */
+  z-index: 0;
+}
+
+.book {
+  width: 60px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  writing-mode: vertical-rl; /* Text along the spine */
+  color: white;
+  font-size: 12px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+  z-index: 10000;
+}
+
+.book:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  z-index: 10001;
+}
+
+.book a {
+  text-decoration: none;
+  color: inherit;
+}

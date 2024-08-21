@@ -1,0 +1,5 @@
+.town-map {
+  background-color: #f0f0f0;
+  display: grid;
+  aspect-ratio: 12 / 7; /* 12 columns by 7 rows */
+}
