@@ -1,6 +1,6 @@
 import './LibraryInterior.css'
 
-import { BuildingMetadata } from '../utils'
+import { BuildingMetadata } from '../../utils'
 // LibraryInterior.tsx
 import React from 'react'
 
@@ -33,7 +33,7 @@ const LibraryInterior: React.FC<LibraryInteriorProps> = ({ metadata, bookmarks }
 
   return (
     <div className="library-interior">
-      <h3>{metadata.label} Bookmarks</h3>
+      <h1>{metadata.label}</h1>
       <div className="bookshelf">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className="book-row">

@@ -8,6 +8,18 @@
   justify-content: center;
 }
 
+.library-interior h1 {
+  /* font-family: 'Jacquarda Bastarda 9', serif; */
+  font-size: 36px;
+  color: #3a250f; /* Saddle brown */
+  margin-bottom: 20px;
+  background-color: blanchedalmond;
+  border-style: ridge;
+  border-width: 5pxpx;
+  border-color: #7b4e1f;
+  padding: 20px;
+}
+
 .bookshelf {
   display: flex;
   flex-wrap: wrap;

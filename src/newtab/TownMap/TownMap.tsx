@@ -1,17 +1,19 @@
 import './TownMap.css'
 
-import Arcade from '../Buildings/Arcade'
-import BuildingLayout from '../BuildingLayout/BuildingLayout'
-import Cinema from '../Buildings/Cinema'
-import ClockTower from '../Buildings/ClockTower'
-import Home from '../Buildings/Home'
-import Library from '../Buildings/Library'
-import ParkTownSquare from '../Buildings/ParkTownSquare'
-import PostOffice from '../Buildings/PostOffice'
 // TownMap.tsx
-import React from 'react'
-import SchoolOffice from '../Buildings/SchoolOffice'
-import TrainStation from '../Buildings/TrainStation'
+import React, { useEffect, useRef } from 'react'
+
+import Arcade from '../Buildings/Exteriors/Arcade'
+import BackgroundAudio from '../BackgroundAudio/BackgroundAudio'
+import BuildingLayout from '../BuildingLayout/BuildingLayout'
+import Cinema from '../Buildings/Exteriors/Cinema'
+import ClockTower from '../Buildings/Exteriors/ClockTower'
+import Home from '../Buildings/Exteriors/Home'
+import Library from '../Buildings/Exteriors/Library'
+import ParkTownSquare from '../Buildings/Exteriors/ParkTownSquare'
+import PostOffice from '../Buildings/Exteriors/PostOffice'
+import SchoolOffice from '../Buildings/Exteriors/SchoolOffice'
+import TrainStation from '../Buildings/Exteriors/TrainStation'
 import { defaultTheme } from '../themes'
 
 interface TownMapProps {
@@ -37,7 +39,7 @@ const TownMap: React.FC<TownMapProps> = ({ columns, rows }) => {
         <BuildingLayout name="Library" x={2} y={3} width={2} height={2}>
           <Library />
         </BuildingLayout>
-        <BuildingLayout name="Arcade" x={4} y={0} width={3} height={2}>
+        <BuildingLayout name="Arcade" x={8} y={1} width={2} height={2}>
           <Arcade />
         </BuildingLayout>
         <BuildingLayout name="Post Office" x={1} y={5} width={2} height={2}>
@@ -52,10 +54,10 @@ const TownMap: React.FC<TownMapProps> = ({ columns, rows }) => {
         <BuildingLayout name="Park/Town Square" x={6} y={3} width={3} height={2}>
           <ParkTownSquare />
         </BuildingLayout>
-        <BuildingLayout name="Train Station" x={2} y={7} width={2} height={1}>
+        <BuildingLayout name="Train Station" x={11} y={5} width={2} height={2}>
           <TrainStation />
         </BuildingLayout>
-        <BuildingLayout name="Cinema" x={5} y={1} width={1} height={1}>
+        <BuildingLayout name="Cinema" x={5} y={1} width={2} height={2}>
           <Cinema />
         </BuildingLayout>
       </div>

@@ -1,5 +1,6 @@
-import Building from './Building'
-import { buildingMetadata } from '../utils'
+import Building from '../Building'
+import LibraryInterior from '../Interiors/LibraryInterior'
+import { buildingMetadata } from '../../utils'
 
 const ClockTower = () => {
   const handleClockTowerReminder = () => {
@@ -10,9 +11,8 @@ const ClockTower = () => {
   return (
     <Building
       metadata={buildingMetadata.clockTower}
-      exteriorImage="/path/to/clocktower-exterior.png"
-      interiorImage="/path/to/clocktower-interior.png"
       specialFunctionality={handleClockTowerReminder}
+      InteriorComponent={LibraryInterior}
     />
   )
 }

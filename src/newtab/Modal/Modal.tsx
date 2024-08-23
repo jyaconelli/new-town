@@ -20,7 +20,10 @@ const Modal: React.FC<ModalProps> = ({ onClose, backgroundImage, children }) => 
   }
 
   return (
-    <div className="modal-overlay" onClick={(e) => e.stopPropagation()}>
+    <div
+      className={`modal-overlay ${isExiting ? 'closing' : 'opening'}`}
+      onClick={(e) => e.stopPropagation()}
+    >
       <div
         className={`modal-content ${isExiting ? 'slide-down' : 'slide-up'}`}
         style={{ backgroundImage: `url(${backgroundImage})` }}

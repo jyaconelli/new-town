@@ -30,13 +30,23 @@ export default defineManifest({
       js: ['src/contentScript/index.ts'],
     },
   ],
+  content_security_policy: {
+    extension_pages:
+      "script-src 'self'; object-src 'self'; media-src 'self' https://diviextended.com/wp-content/uploads/2021/10/sound-of-waves-marine-drive-mumbai.mp3",
+  },
   web_accessible_resources: [
     {
-      resources: ['img/logo-16.png', 'img/logo-34.png', 'img/logo-48.png', 'img/logo-128.png'],
+      resources: [
+        'img/logo-16.png',
+        'img/logo-34.png',
+        'img/logo-48.png',
+        'img/logo-128.png',
+        'sounds/8-bit-town-track.mp3',
+      ],
       matches: [],
     },
   ],
-  permissions: ['tabs', 'storage'],
+  permissions: ['tabs', 'storage', 'media', 'activeTab'],
   chrome_url_overrides: {
     newtab: 'newtab.html',
   },
