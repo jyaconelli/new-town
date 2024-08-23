@@ -1,0 +1,58 @@
+/* WeatherEffects.css */
+.weather-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.weather-container.rain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/img/rain-sm.gif), url(/img/rain.gif); /* Example rain overlay */
+  background-repeat: repeat;
+  background-size: auto; /* Optional: Adjust as needed */
+  background-position: top left;
+  pointer-events: none;
+  opacity: 0.3;
+  z-index: 1;
+  /* animation: rain-fall 1s infinite linear; */
+}
+
+.weather-container.clouds::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/clouds.gif'); /* Example clouds overlay */
+}
+
+.weather-container.windy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/leaves.gif'); /* Example leaves overlay */
+}
+
+.weather-container.night {
+  filter: brightness(0.5) hue-rotate(190deg); /* Dark blue tint for night */
+}
+
+.weather-container.sunset {
+  filter: sepia(0.3) brightness(0.7) hue-rotate(-30deg); /* Orange tint for sunset */
+}
+
+/* morning filter */
+.weather-container.morning {
+  filter: brightness(1.2) hue-rotate(30deg); /* Brightness and warm tint for morning */
+}
+

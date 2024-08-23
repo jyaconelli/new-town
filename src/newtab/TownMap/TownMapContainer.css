@@ -5,12 +5,11 @@
   justify-content: center;
   align-items: center;
   overflow: hidden; /* Prevents overflow */
-  background-color: bisque;
+  background-color: #018002;
   display: flex;
 }
 
 .town-map-wrapper {
-  background-color: aqua;
   display: flex;
   max-width: 100cqw;
   max-height: 100cqh;

@@ -11,7 +11,14 @@ interface BuildingLayoutProps {
   y: number
 }
 
-const BuildingLayout: React.FC<React.PropsWithChildren<BuildingLayoutProps>> = ({ name, height, width, x, y, children }) => {
+const BuildingLayout: React.FC<React.PropsWithChildren<BuildingLayoutProps>> = ({
+  name,
+  height,
+  width,
+  x,
+  y,
+  children,
+}) => {
   const buildingStyle = {
     gridColumn: `${x} / span ${width}`,
     gridRow: `${y} / span ${height}`,

@@ -8,27 +8,33 @@
   width: 100%;
   height: 100%;
   cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .building-image-wrapper {
   width: 100%;
-  height: 80%; /* Allocate 80% of the grid space to the image */
+  height: 100%; /* Allocate 80% of the grid space to the image */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .building-image {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain; /* Ensure the image fits within the allocated space without distortion */
+  image-rendering: pixelated;
+  pointer-events: none;
 }
 
 .building-name {
   font-size: 14px;
   text-align: center;
   margin-top: 5px;
-  font-family: 'Comic Sans MS', cursive;
   color: #333;
 }
 

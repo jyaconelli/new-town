@@ -1,55 +1,59 @@
 import './AnalogClock.css'
 
-// AnalogClock.tsx
-import React, { useEffect, useState } from 'react'
+import React, { Component } from 'react'
 
-const AnalogClock: React.FC = () => {
-  const [time, setTime] = useState(new Date())
+const Clock: React.FC = () => {
+  const [time, setTime] = React.useState(new Date())
 
-  useEffect(() => {
+  React.useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date())
-    }, 1000) // Update every second
-
-    return () => clearInterval(interval) // Cleanup on unmount
+    }, 1000)
+    return () => clearInterval(interval)
   }, [])
 
-  // Correct angle calculations
-  const seconds = time.getSeconds()
-  const minutes = time.getMinutes()
-  const hours = time.getHours() % 12
+  const hour = time.getHours()
+  const minute = time.getMinutes()
+  const second = time.getSeconds()
 
-  console.log(hours, minutes, seconds)
-  const offset = 90
-  const secondDegree = (seconds / 60) * 360 - offset
-  const minuteDegree = (minutes / 60) * 360 - offset // Add seconds for smooth transition
-  const hourDegree = (hours / 12) * 360 - offset // Add minutes for smooth transition
-
-  // Array of hour numbers (1 to 12) and their positions around the clock
-  const hourNumbers = Array.from({ length: 12 }, (_, i) => i + 1)
+  const hourDeg = (hour + minute / 60 + second / (60 * 60)) * 30
+  const minuteDeg = (minute + second / 60) * 6
+  const secondDeg = second * 6
 
   return (
     <div className="clock">
-      <div className="clock-face">
-        <div style={{ transform: `rotate(24deg) translateY(-10px)`, position: 'absolute', left: '50%', top: '50%' }}>
-          {hourNumbers.map((number, index) => (
-            <div
-              key={index}
-              className="clock-number"
-              style={{
-                transform: `rotate(${index * 30 - offset}deg) translate(90px) rotate(-${index * 30 - offset}deg)`,
-              }}
-            >
-              {number}
-            </div>
-          ))}
-        </div>
-        <div className="hand hour-hand" style={{ transform: `rotate(${hourDegree}deg)` }} />
-        <div className="hand minute-hand" style={{ transform: `rotate(${minuteDegree}deg)` }} />
-        <div className="hand second-hand" style={{ transform: `rotate(${secondDegree}deg)` }} />
-      </div>
+      <div
+        className="hour_hand"
+        style={{
+          transform: `rotateZ(${hourDeg}deg)`,
+        }}
+      />
+      <div
+        className="min_hand"
+        style={{
+          transform: `rotateZ(${minuteDeg}deg)`,
+        }}
+      />
+      <div
+        className="sec_hand"
+        style={{
+          transform: `rotateZ(${secondDeg}deg)`,
+        }}
+      />
+      <span className="twelve">12</span>
+      <span className="one">1</span>
+      <span className="two">2</span>
+      <span className="three">3</span>
+      <span className="four">4</span>
+      <span className="five">5</span>
+      <span className="six">6</span>
+      <span className="seven">7</span>
+      <span className="eight">8</span>
+      <span className="nine">9</span>
+      <span className="ten">10</span>
+      <span className="eleven">11</span>
     </div>
   )
 }
 
-export default AnalogClock
+export default Clock

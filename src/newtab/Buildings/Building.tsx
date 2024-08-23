@@ -47,7 +47,7 @@ const Building: React.FC<BuildingProps> = ({
       <div className="building-image-wrapper">
         <img src={exteriorImage} alt={`${label} Image`} className="building-image" />
       </div>
-      <div className="building-name">{label}</div>
+      {/* <div className="building-name">{label}</div> */}
 
       {isOpen && (
         <Modal onClose={handleClose} backgroundImage={interiorImage}>

@@ -39,7 +39,7 @@ export const buildingMetadata = {
   parkTownSquare: {
     label: 'Park/Town Square',
     category: 'parkTownSquare',
-    exteriorImage: '/img/park-town-square-exterior.png',
+    exteriorImage: '/img/park.png',
   },
   trainStation: {
     label: 'Train Station',

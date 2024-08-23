@@ -1,14 +1,11 @@
 import './LibraryInterior.css'
 
+import { BuildingMetadata } from '../utils'
 // LibraryInterior.tsx
 import React from 'react'
 
 interface LibraryInteriorProps {
-  metadata: {
-    label: string
-    category: string
-    exteriorImage: string
-  }
+  metadata: BuildingMetadata
   bookmarks: { url: string; title: string }[]
 }
 

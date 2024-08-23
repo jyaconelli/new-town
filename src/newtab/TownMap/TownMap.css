@@ -1,5 +1,27 @@
 .town-map {
-  background-color: #f0f0f0;
   display: grid;
   aspect-ratio: 12 / 7; /* 12 columns by 7 rows */
+  grid-auto-columns: calc(100% / 12);
+  grid-auto-rows: calc(100% / 12);
+}
+.town-map-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.town-map-background img {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  image-rendering: pixelated;
+  pointer-events: none;
 }
